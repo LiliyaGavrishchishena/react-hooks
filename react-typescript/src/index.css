@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, Arial, Ubuntu, sasn-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5c6369;
+}
+
+ul,
+li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
