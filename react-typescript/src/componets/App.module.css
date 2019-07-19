@@ -1,33 +1,163 @@
-.App {
+body {
+  width: 100%;
+  min-height: 100%;
+  color: #111;
+  background-color: #eee;
+  background-image: url('https://i.imgur.com/Yltkhe6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  overflow: hidden;
+}
+.h1 {
+  color: #fff;
+  margin-bottom: 0.6em;
+  font-variant: small-caps;
+  font-size: 2.5em;
+}
+.main::before {
+  content: '';
+  display: inline-block;
+  width: 110%;
+  min-height: 110%;
+  position: absolute;
+  z-index: -1;
+  left: -5px;
+  top: -5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-image: url('https://i.imgur.com/Yltkhe6.jpg');
+  background-image: -moz-linear-gradient(
+      90deg,
+      rgba(100, 100, 100, 0.2),
+      rgba(100, 100, 100, 0.2)
+    ),
+    url('https://i.imgur.com/Yltkhe6.jpg');
+  background-image: -webkit-linear-gradient(
+      90deg,
+      rgba(100, 100, 100, 0.2),
+      rgba(100, 100, 100, 0.2)
+    ),
+    url('https://i.imgur.com/Yltkhe6.jpg');
+  background-image: linear-gradient(
+      0deg,
+      rgba(100, 100, 100, 0.2),
+      rgba(100, 100, 100, 0.2)
+    ),
+    url('https://i.imgur.com/Yltkhe6.jpg');
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  overflow: hidden;
+}
+.main {
+  width: 50%;
+  min-height: 30%;
+  max-height: 73%;
+  max-width: 600px;
+  top: 20%;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.main:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.7);
+}
+.input {
+  padding: 14px 20px;
+  border-radius: 4px 0 0 4px;
+  width: 80%;
+  outline: none;
+  border: none;
+}
+.button {
+  transition: all 0.3s ease;
+  margin-left: -5px;
+  background-color: #4caf50;
+  color: #fff;
+  width: 20%;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+}
+.button:hover {
+  background-color: #45a049;
+}
+
+ul li {
+  background-color: #fff;
+  border-radius: 4px;
+  color: #aaa;
+  text-align: left;
+  padding: 12px 20px;
+  margin: 0.5em auto;
+  width: 100%;
+  word-break: keep-all;
+  list-style: none;
+}
+
+.ul {
+  margin: 1em auto;
+  padding: 0 8px;
+  overflow-y: auto;
+  max-height: 43vh;
+}
+
+.li {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.complete {
+  transition: all 0.3s ease;
+  margin-left: -5px;
+  background-color: #4caf50;
+  color: #fff;
+  width: 20%;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  outline: null;
+}
+.complete:hover {
+  background-color: #45a049;
+  outline: null;
 }
 
-.App-link {
-  color: #61dafb;
+.remove {
+  transition: all 0.3s ease;
+  margin-left: -5px;
+  background-color: #d65d17;
+  color: #fff;
+  width: 20%;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  outline: null;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.remove:hover {
+  background-color: #f55f08;
+  outline: null;
 }

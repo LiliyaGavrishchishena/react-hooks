@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 //styles
-import './App.module.css';
+import styles from './App.module.css';
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
@@ -19,22 +19,66 @@ export default function App(): JSX.Element {
     setValue('');
   };
 
-  const addTodo = (text: string) => {
+  const addTodo = (text: string): void => {
     const newTodos: ITodo[] = [...todos, { text, complete: false }];
     setTodos(newTodos);
   };
+
+  const completeTodo = (index: number): void => {
+    const newTodos: ITodo[] = [...todos];
+    newTodos[index].complete = !newTodos[index].complete;
+    setTodos(newTodos);
+  };
+
+  const removeTodo = (index: number): void => {
+    const newTodos: ITodo[] = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
   return (
-    <Fragment>
-      <h1>To Do List</h1>
+    <main className={styles.main}>
+      <h1 className={styles.h1}>Add a new ToDo!</h1>
       <form onSubmit={handleSubmit}>
         <input
+          className={styles.input}
           type="text"
           value={value}
           onChange={e => setValue(e.target.value)}
           required
+          placeholder="Add new Todo"
         />
-        <button type="submit">Add ToDo</button>
+        <button className={styles.button} type="submit">
+          Add ToDo
+        </button>
       </form>
-    </Fragment>
+      <ul className={styles.ul}>
+        {todos.map((todo: ITodo, index: number) => (
+          <li
+            className={styles.li}
+            key={index}
+            style={{ textDecoration: todo.complete ? 'line-through' : '' }}
+          >
+            {todo.text}
+            <div className={styles.buttons}>
+              <button
+                className={styles.complete}
+                type="button"
+                onClick={() => completeTodo(index)}
+              >
+                {todo.complete ? 'Incomplete' : 'Complete'}
+              </button>
+              <button
+                className={styles.remove}
+                type="button"
+                onClick={() => removeTodo(index)}
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
